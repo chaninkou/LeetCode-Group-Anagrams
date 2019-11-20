@@ -29,11 +29,11 @@ public class GetGroupOfAnagrams {
 				map.put(keyWord, new ArrayList<String>());
 			}
 			
-			// Add the string as value with the sorted string key everytime
+			// Add the string as value with the sorted string key every time
 			map.get(keyWord).add(word);
 		}
 	
-		// return all the values 
+		// return all the values, a way to return values
 		return new ArrayList<List<String>>(map.values());
 	}
 }
