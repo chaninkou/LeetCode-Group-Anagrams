@@ -7,24 +7,26 @@ import java.util.List;
 
 public class GetGroupOfAnagrams {
 	public List<List<String>> groupAnagrams(String[] strs) {
+		// Checking if the string array is valid, else return empty list
 		if(strs.length == 0 || strs == null){
 			return new ArrayList<List<String>>();
 		}
 		
-		// Storing the sorted string as a key and each string of the array as a value
+		// Storing the sorted string as a key and each original string get added as a value
 		HashMap<String, List<String>> map = new HashMap<>();
 		
+		// Go through the whole array
 		for(String word : strs){
-			// For the word, make each letter into char
+			// For the word, make each letter into char array
 			char[] charArray = word.toCharArray();
 			
-			// Sort the word since we want duplicate as the same key
+			// Sort the word since every anagrams will need the same key
 			Arrays.sort(charArray);
 			
 			// Using the sorted string as a key for the map
 			String keyWord = String.valueOf(charArray);
 			
-			// If its the first time, make the key with a new list
+			// If its the first time seeing the key, add the key with the value of a new list
 			if(!map.containsKey(keyWord)){
 				map.put(keyWord, new ArrayList<String>());
 			}
