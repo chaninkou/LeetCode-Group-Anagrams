@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class GetGroupOfAnagrams {
 	public List<List<String>> groupAnagrams(String[] strs) {
@@ -13,7 +14,7 @@ public class GetGroupOfAnagrams {
 		}
 		
 		// Storing the sorted string as a key and each original string get added as a value
-		HashMap<String, List<String>> map = new HashMap<>();
+		Map<String, List<String>> map = new HashMap<>();
 		
 		// Go through the whole array
 		for(String word : strs){
@@ -32,10 +33,12 @@ public class GetGroupOfAnagrams {
 			}
 			
 			// Add the string as value with the sorted string key every time
+			// If the value is an arraylist, you could get the list and use the add method to add string
 			map.get(keyWord).add(word);
 		}
 	
 		// return all the values, a way to return values
+		// map.values() is a list
 		return new ArrayList<List<String>>(map.values());
 	}
 }
