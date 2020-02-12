@@ -13,7 +13,7 @@ public class GetGroupOfAnagrams {
 			return new ArrayList<List<String>>();
 		}
 		
-		// Storing the sorted string as a key and each original string get added as a value
+		// Storing the sorted string as a key and each original string get added as a value.
 		Map<String, List<String>> map = new HashMap<>();
 		
 		// Go through the whole array
