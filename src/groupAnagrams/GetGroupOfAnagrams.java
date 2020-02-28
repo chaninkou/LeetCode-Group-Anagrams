@@ -25,6 +25,7 @@ public class GetGroupOfAnagrams {
 			Arrays.sort(charArray);
 			
 			// Using the sorted string as a key for the map
+			// String.valueOf will cast the array to a string
 			String keyWord = String.valueOf(charArray);
 			
 			// If its the first time seeing the key, add the key with the value of a new list
