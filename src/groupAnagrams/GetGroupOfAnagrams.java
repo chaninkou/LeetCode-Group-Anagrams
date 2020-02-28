@@ -3,6 +3,7 @@ package groupAnagrams;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -42,4 +43,28 @@ public class GetGroupOfAnagrams {
 		// map.values() is a list
 		return new ArrayList<List<String>>(map.values());
 	}
+
+	public List<List<String>> groupAnagrams2(String[] strs) {
+		Map<String, List<String>> map = new HashMap<>();
+
+		for (String s : strs) {
+			int[] uniqueKeyArray = new int[26];
+			
+			// This will only work if input are only lowercase
+			for (int i = 0; i < s.length(); i++) {
+				uniqueKeyArray[s.charAt(i) - 'a']++;
+			}
+			
+			String key = Arrays.toString(uniqueKeyArray);
+			
+			// Make sure to create an empty list first when nothing is in
+			List<String> tempList = map.getOrDefault(key, new LinkedList<String>());
+			
+			tempList.add(s);
+			
+			map.put(key, tempList);
+		}
+		return new LinkedList<>(map.values());
+	}
+
 }
