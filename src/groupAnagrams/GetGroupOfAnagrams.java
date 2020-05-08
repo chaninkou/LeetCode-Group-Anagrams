@@ -48,6 +48,7 @@ public class GetGroupOfAnagrams {
 		Map<String, List<String>> map = new HashMap<>();
 
 		for (String s : strs) {
+			// Instead of sorting, just turn the number as key
 			int[] uniqueKeyArray = new int[26];
 			
 			// This will only work if input are only lowercase
