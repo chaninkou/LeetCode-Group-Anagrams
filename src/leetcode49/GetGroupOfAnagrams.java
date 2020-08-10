@@ -1,4 +1,4 @@
-package groupAnagrams;
+package leetcode49;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 public class GetGroupOfAnagrams {
+	// Time is O(nlogn) since we need to sort every key and space is O(n) since we are keeping track of the result
 	public List<List<String>> groupAnagrams(String[] strs) {
 		// Checking if the string array is valid, else return empty list
 		if(strs.length == 0 || strs == null){
@@ -44,6 +45,7 @@ public class GetGroupOfAnagrams {
 		return new ArrayList<List<String>>(map.values());
 	}
 
+	// Using int[26] to store key instead of sorting the key
 	public List<List<String>> groupAnagrams2(String[] strs) {
 		Map<String, List<String>> map = new HashMap<>();
 

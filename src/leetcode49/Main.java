@@ -1,4 +1,4 @@
-package groupAnagrams;
+package leetcode49;
 
 import java.util.Arrays;
 
