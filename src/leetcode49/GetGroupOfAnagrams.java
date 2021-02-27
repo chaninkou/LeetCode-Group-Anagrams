@@ -45,7 +45,7 @@ public class GetGroupOfAnagrams {
 		return new ArrayList<List<String>>(map.values());
 	}
 
-	// Using int[26] to store key instead of sorting the key
+	// Using int[26] to store key instead of sorting the key as string
 	// Since it will be a number
 	public List<List<String>> groupAnagrams2(String[] strs) {
 		Map<String, List<String>> map = new HashMap<>();
