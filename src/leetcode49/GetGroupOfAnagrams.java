@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 public class GetGroupOfAnagrams {
-	// Time is O(nlogn) since we need to sort every key and space is O(n) since we are keeping track of the result
+	// O(nlogn) Time since we need to sort every key and space is O(n) since we are keeping track of the result
 	public List<List<String>> groupAnagrams(String[] strs) {
 		// Checking if the string array is valid, else return empty list
 		if(strs.length == 0 || strs == null){
